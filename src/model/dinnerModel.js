@@ -91,15 +91,15 @@ class DinnerModel {
 
   //Returns a dish of specific ID
   getDish(id) {
-    /*for (let dish of this.dishes) {
+    for (let dish of this.dishes) {
       if (dish.id === id) {
         return dish;
       }
     }
     return undefined;
-  }*/
-    return dishesConst.filter((o,i,a) => { return o.id == id; } )[0];
-    return undefined;
+  }
+    //return dishesConst.filter((o,i,a) => { return o.id == id; } )[0];
+    //return undefined;
 
       
       /*return this.dishes.filter(function(obj) { 
