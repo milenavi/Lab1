@@ -98,9 +98,7 @@ class DinnerModel {
     }
     return undefined;
   }*/
-    return this.dishes.filter(function (obj) { 
-      return (obj.id.includes(id)); 
-    });
+    return this.dishes.find((obj) => obj.id == id)
 
       
       /*return this.dishes.filter(function(obj) { 
