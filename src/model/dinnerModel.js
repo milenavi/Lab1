@@ -40,16 +40,14 @@ class DinnerModel {
     // Om elementet i arrayen existerar då returnerar indexOf()
     // ett värde som är > -1. Annars om det blir lika med -1 eller mindre
     // då betyder det att elementet i arrayn existerar inte.
-    //return this.dinnerMenu.filter(function(obj) {
-                //return obj.dishTypes.indexOf(type)>-1; });
-    return this.dinnerMenu.filter(function(obj) {
-                return obj.dishTypes.includes(type); });
-
+    /*return this.dinnerMenu.filter(function(obj) {
+                return obj.dishTypes.indexOf(type)>-1; });*/
   }
 
   //Returns all the dishes on the menu.
   getFullMenu() {
     //TODO Lab 1
+    return this.dinnerMenu;
   }
 
   //Returns all ingredients for all the dishes on the menu.
