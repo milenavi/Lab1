@@ -79,6 +79,7 @@ class DinnerModel {
   //Removes dish with specified id from menu
   removeDishFromMenu(id) {
     //TODO Lab 1
+    this.dinnerMenu = this.dinnerMenu.filter(function(obj) { return obj.id !== id; });
   }
 
   //Returns all dishes of specific type (i.e. "starter", "main dish" or "dessert").
