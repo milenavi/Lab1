@@ -53,6 +53,12 @@ class DinnerModel {
   //Returns all ingredients for all the dishes on the menu.
   getAllIngredients() {
     //TODO Lab 1
+    return this.dinnerMenu.filter(function(obj) {
+      const result = obj.extendedIngredients;
+      result.filter(function(obj2) {
+        return obj2.name;
+      });
+    });
   }
 
   //Returns the total price of the menu (price per serving of each dish multiplied by number of guests).
