@@ -103,7 +103,6 @@ class DinnerModel {
     if(obj.id === id) { 
       return obj; 
     }
-    return undefined;
   });
 }
 
