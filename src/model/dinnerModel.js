@@ -98,11 +98,11 @@ class DinnerModel {
     }
     return undefined;
   }*/
-      const correctID = obj => obj.id === id;
-      const getName = obj => obj.name;
-      const getDishName = this.dishes.filter(correctID).map(getName);
-      const dishes = getDishName(this.dishes) ;
-      return console.log(dishes);
+    return this.dishes.filter(function (obj) { 
+      return (obj.id.includes(id) || !id); 
+    });
+
+      
       /*return this.dishes.filter(function(obj) { 
         if(obj.id === id) {
           return obj
