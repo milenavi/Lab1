@@ -99,7 +99,7 @@ class DinnerModel {
     return undefined;
   }*/
 
-  this.dishes.filter(function(obj) { 
+  this.dishes.map(function(obj) { 
     if(obj.id === id) { 
       return obj; 
     }
