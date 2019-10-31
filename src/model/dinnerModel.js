@@ -1,52 +1,95 @@
+export const ENDPOINT = ;
+export const API_KEY = ;
+
 //DinnerModel class
 class DinnerModel {
 
   constructor() {
-    this.dishes = dishesConst;
+    this.dishes = dishesConst;    // Sets an object property (field) --> 'dishes'
+                                  // 'dishesConst' is an array constant
 
     //TODO Lab 1
     // implement the data structure that will hold number of guests
+    // Initializing the properties 'numberOfGuests' and 'dinnerMenu':
+    this.numberOfGuests = 0;
     // and selected dishes for the dinner menu
+    this.dinnerMenu = [];
 
   }
 
   setNumberOfGuests(num) {
     //TODO Lab 1
+    this.numberOfGuests = num;
   }
 
   getNumberOfGuests() {
     //TODO Lab 1
+    return this.numberOfGuests;
   }
 
   //Returns the dishes that are on the menu for selected type
   getSelectedDishes(type) {
     //TODO Lab 1
+    // Let's say we select a type: 'Dessert'. 
+    // The dishes associated with the selected dishType: 'Dessert'
+    // will be filtered and contained in the array: 'dinnerMenu'
+    // Then, this array will be returned with its content once the
+    // function getSelectedDishes() is invoked.
+
+    // The array object 'dinnerMenu' calls the function filter()
+    // I access the object property 'dishType' within 'dishesConst' array 
+    // by dot notation writing like this: 'obj.dishTypes'.
+
+    // Om elementet i arrayen existerar då returnerar indexOf()
+    // ett värde som är > -1. Annars om det blir lika med -1 eller mindre
+    // då betyder det att elementet i arrayn existerar inte.
+    return this.dinnerMenu.filter(function(obj) {
+                return obj.dishTypes.indexOf(type) > -1;
+    });
+
   }
 
   //Returns all the dishes on the menu.
   getFullMenu() {
     //TODO Lab 1
+    return this.dinnerMenu;
   }
 
   //Returns all ingredients for all the dishes on the menu.
   getAllIngredients() {
     //TODO Lab 1
+    return this.dinnerMenu.filter(function(obj) {
+      const result = obj.extendedIngredients;
+      result.filter(function(obj2) {
+        return obj2.name;
+      });
+    });
   }
 
   //Returns the total price of the menu (price per serving of each dish multiplied by number of guests).
   getTotalMenuPrice() {
     //TODO Lab 1
+    return this.dinnerMenu.map(function(obj) { 
+      return obj.pricePerServing; 
+    }).reduce((a, b) => a + b, 0) * getNumberOfGuests()
   }
 
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
   addDishToMenu(dish) {
     //TODO Lab 1
+    // Adds a chosen dish parameter to the menu
+    this.dinnerMenu.push(dish);
   }
 
   //Removes dish with specified id from menu
   removeDishFromMenu(id) {
     //TODO Lab 1
+    // filter() kommer att programmatiskt ta bort det elementet som är false
+    // när det visas i 'obj.id !== id'.
+    // filter() kommer filtrera efter och ta med endast de element som är true 
+    // och uppdatera arrayen 'dinnerMenu' med dessa elementen förutom false.
+    this.dinnerMenu = this.dinnerMenu.filter(function(obj) { return obj.id !== id; });
   }
 
   //Returns all dishes of specific type (i.e. "starter", "main dish" or "dessert").
@@ -72,13 +115,17 @@ class DinnerModel {
 
   //Returns a dish of specific ID
   getDish(id) {
-    for (let dish of this.dishes) {
+    /*for (let dish of this.dishes) {
       if (dish.id === id) {
         return dish;
       }
     }
     return undefined;
-  }
+  }*/
+      // Det kommer finnas antingen ett element som är true eller det kommer inte
+      // finnas någon sånt element med en specificierad id alls samt resten
+      // elementen kommer bli false. Vi returnerar endast det elementet som är true.
+      return this.dinnerMenu.filter(function(obj) { return obj.id === id; });
 }
 
 // the dishes constant contains an array of all the
