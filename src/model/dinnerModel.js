@@ -42,6 +42,8 @@ class DinnerModel {
     // då betyder det att elementet i arrayn existerar inte.
     /*return this.dinnerMenu.filter(function(obj) {
                 return obj.dishTypes.indexOf(type)>-1; });*/
+
+    return this.getAllDishes(type);
   }
 
   //Returns all the dishes on the menu.
@@ -105,15 +107,13 @@ class DinnerModel {
 
   //Returns a dish of specific ID
   getDish(id) {
-    /*for (let dish of this.dishes) {
+    for (let dish of this.dishes) {
       if (dish.id === id) {
         return dish;
       }
     }
     return undefined;
-  }*/
-    return this.dinnerMenu.filter(function(obj) {  
-      if(obj.id === id) { return obj; } else { return undefined; } } });
+  }
 }
 
 // the dishes constant contains an array of all the
