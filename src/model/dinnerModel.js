@@ -100,7 +100,7 @@ class DinnerModel {
   }*/
     //return this.dishes.find((obj) => obj.id == id)
     return this.dishes.find((obj) => {
-                           if(obj.id === id) {
+                           if(obj.id === 1) {
                             return obj;
                            } else {
                             return undefined;
