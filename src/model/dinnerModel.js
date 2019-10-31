@@ -99,11 +99,7 @@ class DinnerModel {
     return undefined;
   }*/
 
-  this.dishes.map(function(obj) { 
-    if(obj.id === id) { 
-      return obj; 
-    }
-  });
+  this.dishes.filter(function(obj) { return obj.id === id } });
 }
 
 // the dishes constant contains an array of all the
