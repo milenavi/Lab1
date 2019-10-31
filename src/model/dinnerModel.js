@@ -27,6 +27,21 @@ class DinnerModel {
   //Returns the dishes that are on the menu for selected type
   getSelectedDishes(type) {
     //TODO Lab 1
+    // Let's say we select a type: 'Dessert'. 
+    // The dishes associated with the selected dishType: 'Dessert'
+    // will be filtered and contained in the array: 'dinnerMenu'
+    // Then, this array will be returned with its content once the
+    // function getSelectedDishes() is invoked.
+
+    // The array object 'dinnerMenu' calls the function filter()
+    // I access the object property 'dishType' within 'dishesConst' array 
+    // by dot notation writing like this: 'obj.dishTypes'.
+
+    // Om elementet i arrayen existerar då returnerar indexOf()
+    // ett värde som är > -1. Annars om det blir lika med -1 eller mindre
+    // då betyder det att elementet i arrayn existerar inte.
+    return this.dinnerMenu.filter(function(obj) {
+                return obj.dishTypes.indexOf(type)>-1; });
   }
 
   //Returns all the dishes on the menu.
