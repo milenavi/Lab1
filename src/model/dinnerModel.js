@@ -99,7 +99,7 @@ class DinnerModel {
     return undefined;
   }*/
 
-      this.dishes.filter(obj => obj.id === id  });
+      this.dishes = this.dishes.filter(obj => obj.id === id  });
 }
 
 // the dishes constant contains an array of all the
