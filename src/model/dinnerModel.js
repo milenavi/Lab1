@@ -2,20 +2,26 @@
 class DinnerModel {
 
   constructor() {
-    this.dishes = dishesConst;
+    this.dishes = dishesConst;    // Sets an object property (field) --> 'dishes'
+                                  // 'dishesConst' is an array constant
 
     //TODO Lab 1
     // implement the data structure that will hold number of guests
+    // Initializing the properties 'numberOfGuests' and 'dinnerMenu':
+    this.numberOfGuests = 0;
     // and selected dishes for the dinner menu
+    this.dinnerMenu = [];
 
   }
 
   setNumberOfGuests(num) {
     //TODO Lab 1
+    this.numberOfGuests = num;
   }
 
   getNumberOfGuests() {
     //TODO Lab 1
+    return this.numberOfGuests;
   }
 
   //Returns the dishes that are on the menu for selected type
