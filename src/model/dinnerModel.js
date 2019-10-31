@@ -73,6 +73,7 @@ class DinnerModel {
   //it is removed from the menu and the new one added.
   addDishToMenu(dish) {
     //TODO Lab 1
+    this.dinnerMenu.push(dish);
   }
 
   //Removes dish with specified id from menu
