@@ -98,8 +98,8 @@ class DinnerModel {
     }
     return undefined;
   }*/
-    return this.dishesConst.filter(function (obj) { 
-      return (obj.id.includes(id) || !id); 
+    return this.dishes.filter(function (obj) { 
+      return (obj.id.includes(id)); 
     });
 
       
