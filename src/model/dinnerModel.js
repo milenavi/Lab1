@@ -112,7 +112,8 @@ class DinnerModel {
     }
     return undefined;
   }*/
-    return this.dinnerMenu.filter(function(obj) { return obj.id === id; });
+    return this.dinnerMenu.filter(function(obj) {  
+      if(obj.id === id) { return obj; } else { return undefined; } } });
 }
 
 // the dishes constant contains an array of all the
