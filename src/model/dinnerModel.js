@@ -100,8 +100,9 @@ class DinnerModel {
   }*/
       const correctID = obj => obj.id === id;
       const getName = obj => obj.name;
-      const objects = this.dishes.filter(correctID).map(getName);
-      return objects;
+      const getDishName = this.dishes.filter(correctID).map(getName);
+      const dishes = getDishName(this.dishes) ;
+      return console.log(dishes);
       /*return this.dishes.filter(function(obj) { 
         if(obj.id === id) {
           return obj
