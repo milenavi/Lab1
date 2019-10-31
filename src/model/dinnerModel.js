@@ -106,6 +106,8 @@ class DinnerModel {
         if(obj.id === id) {
           return obj
         } } });*/
+
+  }
 }
 
 // the dishes constant contains an array of all the
