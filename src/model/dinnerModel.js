@@ -101,6 +101,19 @@ class DinnerModel {
     return this.dishes.find(function(obj) { return obj.id === id; }); return undefined;
 
   }
+
+  taskThree() {
+    /*const header = {
+  "method": "GET",
+  "headers": {
+    "X-Mashape-Key": "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
+  }*/
+    const url = "http://sunset.nada.kth.se:8080/iprog2/group/<group-number>/recipes/search?type=Dessert&query=Pizza";
+    fetch(url, { 
+      headers:{ 
+        "X-Mashape-Key":"3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"}}).then(response => response.json()).then(console.log).catch(console.error);
+
+  }
 }
 
 // the dishes constant contains an array of all the
