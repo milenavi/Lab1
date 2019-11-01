@@ -2,7 +2,7 @@
 class DinnerModel {
 
   constructor() {
-    this.dishes = dishesConst;    // Sets an object property (field) --> 'dishes'
+    //this.dishes = dishesConst;    // Sets an object property (field) --> 'dishes'
                                   // 'dishesConst' is an array constant
 
     //TODO Lab 1
@@ -71,7 +71,7 @@ class DinnerModel {
   //Returns all dishes of specific type (i.e. "starter", "main dish" or "dessert").
   //query argument, text, if passed only returns dishes that contain the query in name or one of the ingredients.
   //if you don't pass any query, all the dishes will be returned
-  getAllDishes(type, query) {
+  /*getAllDishes(type, query) {
     return this.dishes.filter(function (dish) {
       let found = true;
       if (query) {
@@ -87,34 +87,39 @@ class DinnerModel {
       }
       return (dish.dishTypes.includes(type) || !type) && found;
     });
+  }*/
+
+  // API call where fetch() returns a promise
+  getAllDishes(type, query) {
+    //console.log("type" + type);
+    //console.log("query" + query);
+    return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + type + "&query=" + query,
+      {
+        headers: {
+          "X-Mashape-Key": "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
+        }
+      }
+    ).then(response => response.json());
   }
 
   //Returns a dish of specific ID
-  getDish(id) {
-    /*for (let dish of this.dishes) {
-      if (dish.id === id) {
-        return dish;
-      }
-    }
-    return undefined;
-  }*/
+  /*getDish(id) {
+    /
     return this.dishes.find(function(obj) { return obj.id === id; }); return undefined;
 
-  }
-
-  taskThree() {
-    /*const header = {
-  "method": "GET",
-  "headers": {
-    "X-Mashape-Key": "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
   }*/
-    /*const url = "http://sunset.nada.kth.se:8080/iprog2/group/<group-number>/recipes/search?type=Dessert&query=Pizza";
-    return fetch(url, { 
-      headers:{ 
-        "X-Mashape-Key":"3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"}}).then(response => response.json()).then(console.log).catch(console.error);*/
 
-     const taskThree = { headers: {'X-Mashape-Key': '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767'}};
-     return taskThree;
+  // TASK 3 starts here : Making API calls
+
+  // API call
+  getDish(id) {
+    return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/" + id + "/information",
+      {
+        headers: {
+          "X-Mashape-Key": "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
+        }
+      }
+    ).then(response => response.json());
   }
 }
 
