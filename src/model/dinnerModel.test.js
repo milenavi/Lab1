@@ -12,9 +12,6 @@ describe("DinnerModel", () => {
   // If setNumberOfGuests(num) is called with num <= 0, then then number of guests should be set to 1.
   describe("verifying number of guests", () => {
     it("number of guests cannot be less than 1", () => {
-      model.setNumberOfGuests(0);
-      expect(model.getNumberOfGuests()).to.equal(1);
-
       model.setNumberOfGuests(-1);
       expect(model.getNumberOfGuests()).to.equal(1);
       
