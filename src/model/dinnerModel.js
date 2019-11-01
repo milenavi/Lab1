@@ -91,11 +91,6 @@ class DinnerModel {
 
   // API call where fetch() returns a promise
   getAllDishes(type, query) {
-    console.log("TEST");
-    //console.log("type" + type);
-    //console.log("query" + query);
-    const url = "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + type + "&query=" + query;
-    console.log(url);
     return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + (type ? type : "") + "&query=" + (query ? query : ""),
       {
         headers: {
