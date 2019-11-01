@@ -93,7 +93,7 @@ class DinnerModel {
   getAllDishes(type, query) {
     //console.log("type" + type);
     //console.log("query" + query);
-    return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + type ? type : "" + "&query=" + query + '""',
+    return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + type ? type : "" + "&query=" + query + "",
       {
         headers: {
           method:  "GET",
