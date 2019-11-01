@@ -91,18 +91,19 @@ class DinnerModel {
 
   // API call where fetch() returns a promise
   getAllDishes(type, query) {
+    console.log("TEST");
     //console.log("type" + type);
     //console.log("query" + query);
     const url = "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + type + "&query=" + query;
     console.log(url);
-    return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + type + "&query=" + query,
+    return fetch( "http://sunset.nada.kth.se:8080/iprog2/group/40/recipes/search?type=" + (type ? type : "") + "&query=" + (query ? query : ""),
       {
         headers: {
           method:  "GET",
           "X-Mashape-Key": "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
         }
       }
-    ).then(response => response.json()).then(data => data);
+    ).then(response => response.json()).then(data => data.results);
   }
 
   //Returns a dish of specific ID
