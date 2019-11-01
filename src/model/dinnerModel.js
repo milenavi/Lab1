@@ -124,7 +124,7 @@ class DinnerModel {
 // defining the unit i.e. "g", "slices", "ml". Unit
 // can sometimes be empty like in the example of eggs where
 // you just say "5 eggs" and not "5 pieces of eggs" or anything else.
-const dishesConst = [{
+/*const dishesConst = [{
   'id': 1,
   'name': 'French toast',
   'dishTypes': ['starter', 'breakfast'],
@@ -341,7 +341,7 @@ const dishesConst = [{
     'unit': 'ml',
   }]
 }
-];
+];*/
 
 // Deepfreeze, you can ignore this function
 // https://github.com/substack/deep-freeze/blob/master/index.js
