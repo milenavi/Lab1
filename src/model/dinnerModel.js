@@ -16,7 +16,17 @@ class DinnerModel {
 
   setNumberOfGuests(num) {
     //TODO Lab 1
-    this.numberOfGuests = num;
+    if (num === 0)
+    {
+      this.numberOfGuests = 1;
+    }
+    else if (num === -1)
+    {
+      this.numberOfGuests = 1;
+    }
+    else {
+      this.numberOfGuests = num;
+    }
   }
 
   getNumberOfGuests() {
