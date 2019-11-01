@@ -353,7 +353,7 @@ class DinnerModel {
 // Deepfreeze, you can ignore this function
 // https://github.com/substack/deep-freeze/blob/master/index.js
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
-function deepFreeze(o) {
+/*function deepFreeze(o) {
   Object.freeze(o);
   Object.getOwnPropertyNames(o).forEach(function (prop) {
     if (o.hasOwnProperty(prop)
@@ -365,5 +365,5 @@ function deepFreeze(o) {
   });
 }
 
-deepFreeze(dishesConst);
+deepFreeze(dishesConst);*/
 
