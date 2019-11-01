@@ -10,6 +10,16 @@ describe("DinnerModel", () => {
 
   // TODO Lab 1: write a test to verify that the number of guests cannot be less than 1.
   // If setNumberOfGuests(num) is called with num <= 0, then then number of guests should be set to 1.
+  describe("verifying number of guests", () => {
+    it("number of guests cannot be less than 1", () => {
+      let theNumberOfGuestsIsZero = model.setNumberOfGuests(0);
+      if (theNumberOfGuestsIsZero < 1)
+      {
+        expect(model.getNumberOfGuests()).to.equal(1);
+      }
+      
+    });
+  });
 
   describe("all the functions are present", () => {
     it("contains all the default functions", () => {
