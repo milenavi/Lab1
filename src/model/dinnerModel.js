@@ -108,11 +108,13 @@ class DinnerModel {
   "headers": {
     "X-Mashape-Key": "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
   }*/
-    const url = "http://sunset.nada.kth.se:8080/iprog2/group/<group-number>/recipes/search?type=Dessert&query=Pizza";
+    /*const url = "http://sunset.nada.kth.se:8080/iprog2/group/<group-number>/recipes/search?type=Dessert&query=Pizza";
     return fetch(url, { 
       headers:{ 
-        "X-Mashape-Key":"3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"}}).then(response => response.json()).then(console.log).catch(console.error);
+        "X-Mashape-Key":"3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"}}).then(response => response.json()).then(console.log).catch(console.error);*/
 
+     const taskThree = { headers: {'X-Mashape-Key': '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767'}};
+     return taskThree;
   }
 }
 
@@ -346,7 +348,7 @@ class DinnerModel {
 // Deepfreeze, you can ignore this function
 // https://github.com/substack/deep-freeze/blob/master/index.js
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
-/*function deepFreeze(o) {
+function deepFreeze(o) {
   Object.freeze(o);
   Object.getOwnPropertyNames(o).forEach(function (prop) {
     if (o.hasOwnProperty(prop)
@@ -358,5 +360,5 @@ class DinnerModel {
   });
 }
 
-deepFreeze(dishesConst);*/
+deepFreeze(dishesConst);
 
