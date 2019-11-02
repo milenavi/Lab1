@@ -16,11 +16,7 @@ class DinnerModel {
 
   setNumberOfGuests(num) {
     //TODO Lab 1
-    if (num === 0)
-    {
-      this.numberOfGuests = 1;
-    }
-    else if (num === -1)
+    if (num <= 0)
     {
       this.numberOfGuests = 1;
     }
